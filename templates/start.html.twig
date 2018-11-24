@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block intro %}
+    <h2>Start race</h2>
+{% endblock %}
+
+{% block table %}
+    <table class="table table-responsive">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">class</th>
+            <th scope="col">name</th>
+            <th scope="col">vehicle</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for table_data in data %}
+            <tr>
+                <td>{{ table_data.id }}</td>
+                <td>{{ table_data.class }}</td>
+                <td>{{ table_data.name }}</td>
+                <td>{{ table_data.vehicle }}</td>
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

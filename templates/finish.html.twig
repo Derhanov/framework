@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block intro %}
+    <h2>Result race</h2>
+{% endblock %}
+
+{% block table %}
+    <table class="table table-responsive">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">class</th>
+            <th scope="col">name</th>
+            <th scope="col">lap 1</th>
+            <th scope="col">penalty 1</th>
+            <th scope="col">lap 2</th>
+            <th scope="col">penalty 2</th>
+            <th scope="col">vehicle</th>
+            <th scope="col">place</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for table_data in data %}
+            <tr>
+                <td>{{ table_data.id }}</td>
+                <td>{{ table_data.class }}</td>
+                <td>{{ table_data.name }}</td>
+                <td>{{ table_data.timeLap }}</td>
+                <td>{{ table_data.timeFail }}</td>
+                <td>{{ table_data.timeLap }}</td>
+                <td>{{ table_data.timeFail }}</td>
+                <td>{{ table_data.vehicle }}</td>
+                <td>{{ table_data.winner }}</td>
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

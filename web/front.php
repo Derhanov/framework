@@ -7,7 +7,6 @@ use Symfony\Component\Routing;
 use Symfony\Component\HttpKernel\Controller\ControllerResolver;
 use Symfony\Component\HttpKernel\Controller\ArgumentResolver;
 
-
 $request = Request::createFromGlobals();
 $routes = include __DIR__.'/../src/app.php';
 $context = new Routing\RequestContext();
@@ -16,34 +15,5 @@ $controllerResolver = new ControllerResolver();
 $argumentResolver = new ArgumentResolver();
 $framework = new Simplex\Framework($matcher, $controllerResolver, $argumentResolver);
 $response = $framework->handle($request);
-
-$response->prepare( $request );
+$response->prepare($request);
 $response->send();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
